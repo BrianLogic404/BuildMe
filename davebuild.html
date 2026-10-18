@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DavEbuild | Building & Construction</title>
+<meta name="description" content="DavEbuild designs and builds homes, commercial spaces and renovations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14263A; --concrete:#D9DCDF; --chalk:#F6F7F8; --steel:#55657A; --orange:#F26A1B; --ink:#101A26;
+  --head:'Archivo','Arial Black',Impact,sans-serif; --body:'Work Sans',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--ink);background:var(--chalk);line-height:1.6;font-size:1.05rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;margin-bottom:1rem}
+section{padding:5rem 0}
+.lead{max-width:60ch;color:var(--steel)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:var(--navy);color:var(--chalk)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--head);font-weight:900;font-size:1.5rem;text-decoration:none;letter-spacing:-.03em}
+.logo b{color:var(--orange)}
+nav ul{display:flex;gap:1.75rem;list-style:none}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--orange)}
+.menu-btn{display:none;background:none;border:2px solid var(--chalk);color:var(--chalk);padding:.35rem .7rem;font:inherit;font-weight:600;cursor:pointer;border-radius:4px}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:600;padding:.85rem 1.6rem;border:0;border-radius:4px;text-decoration:none;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{background:#d95a10}
+.btn.ghost{background:transparent;border:2px solid currentColor;color:inherit}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--chalk);padding:4rem 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:900;margin-bottom:1.25rem}
+.hero p{color:#b8c3d0;max-width:46ch;margin-bottom:1.75rem}
+.hero .cta{display:flex;gap:.75rem;flex-wrap:wrap;padding-bottom:3rem}
+.rig{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-bottom:0;border-radius:8px 8px 0 0;padding:1rem 1rem 0}
+.rig label{display:flex;justify-content:space-between;font-size:.9rem;color:#b8c3d0;margin-bottom:.5rem}
+.rig input[type=range]{width:100%;accent-color:var(--orange)}
+.site{height:300px;display:flex;flex-direction:column-reverse;align-items:center;margin-top:.75rem;position:relative;border-bottom:10px solid #0b1623}
+.floor{width:62%;height:30px;background:var(--concrete);border:2px solid #aeb4ba;border-bottom-width:0;display:flex;justify-content:space-around;align-items:center;animation:rise .35s ease-out}
+.floor i{width:14%;height:14px;background:var(--navy);opacity:.75}
+.floor:first-child{width:70%}
+.floor.top{background:var(--orange);border-color:#c9500f}
+.floor.top i{background:#fff;opacity:.6}
+@keyframes rise{from{transform:translateY(-14px);opacity:0}to{transform:none;opacity:1}}
+
+/* Services */
+.services{background:var(--chalk)}
+.svc{list-style:none;margin-top:2.5rem;border-top:3px solid var(--navy)}
+.svc li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--concrete)}
+.svc h3{font-size:1.5rem;font-weight:800}
+.svc p{color:var(--steel)}
+
+/* Projects */
+.projects{background:var(--concrete)}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
+.filters button{font:inherit;font-weight:600;font-size:.95rem;padding:.5rem 1.1rem;border:2px solid var(--navy);background:transparent;color:var(--navy);border-radius:4px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--navy);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.proj .pic{height:190px;position:relative;overflow:hidden;background:linear-gradient(#aebccb 0 62%,#7d8a73 62%)}
+.proj .pic::before,.proj .pic::after{content:"";position:absolute;bottom:38%;background:var(--navy)}
+.proj.home .pic::before{left:18%;width:44%;height:70px}
+.proj.home .pic::after{left:12%;width:56%;height:0;border-left:0;border-bottom:48px solid transparent;background:none;border-left:0;box-shadow:none;bottom:calc(38% + 70px);border-top:0}
+.proj.home .pic{background:linear-gradient(#aebccb 0 62%,#7d8a73 62%)}
+.proj.commercial .pic::before{left:20%;width:30%;height:120px}
+.proj.commercial .pic::after{left:54%;width:22%;height:80px;background:var(--steel)}
+.proj.reno .pic::before{left:25%;width:50%;height:80px;background:var(--steel)}
+.proj.reno .pic::after{left:25%;width:50%;height:22px;background:var(--orange);bottom:calc(38% + 80px)}
+.proj h3{font-size:1.25rem;font-weight:800;margin:1rem 0 .25rem}
+.proj p{color:var(--steel);font-size:.95rem}
+.proj[hidden]{display:none}
+.note{margin-top:1.5rem;font-size:.9rem;color:var(--steel)}
+
+/* Process */
+.steps{counter-reset:s;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2.5rem}
+.steps li{counter-increment:s;border-top:4px solid var(--orange);padding-top:1rem}
+.steps li::before{content:counter(s);font-family:var(--head);font-weight:900;font-size:2.5rem;color:var(--navy);display:block;line-height:1}
+.steps h3{font-size:1.2rem;font-weight:800;margin:.5rem 0 .35rem}
+.steps p{color:var(--steel);font-size:.97rem}
+
+/* Contact */
+.contact{background:var(--navy);color:var(--chalk)}
+.contact .lead{color:#b8c3d0}
+.cgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem}
+.details{margin-top:1.5rem;list-style:none;display:grid;gap:.5rem;color:#b8c3d0}
+form{display:grid;gap:1rem}
+.f{display:grid;gap:.35rem}
+.f label{font-weight:600;font-size:.95rem}
+.f input,.f select,.f textarea{font:inherit;padding:.75rem;border:2px solid transparent;border-radius:4px;background:var(--chalk);color:var(--ink);width:100%}
+.f textarea{min-height:110px;resize:vertical}
+.f .err{color:#ffb089;font-size:.88rem;min-height:1.1em}
+.f.bad input,.f.bad select,.f.bad textarea{border-color:var(--orange)}
+.ok{display:none;background:var(--chalk);color:var(--ink);padding:1.25rem;border-radius:4px;border-left:6px solid var(--orange)}
+.ok.show{display:block}
+
+footer{background:#0b1623;color:#8d9bad;padding:1.5rem 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+@media (max-width:800px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-top:1px solid rgba(255,255,255,.15)}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:.75rem 0}
+  .hero-grid,.cgrid,.svc li{grid-template-columns:1fr}
+  section{padding:3.5rem 0}
+  .site{height:260px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Dav<b>E</b>build</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Get a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Built right. Built to last.</h1>
+        <p>DavEbuild plans and builds new homes, commercial spaces and renovations. One team handles design, permits and construction, so you deal with one contact from first sketch to handover.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Request a quote</a>
+          <a class="btn ghost" href="#projects">See our work</a>
+        </div>
+      </div>
+      <div class="rig">
+        <label for="floors"><span>Drag to build</span><span id="floorLabel">3 floors</span></label>
+        <input type="range" id="floors" min="1" max="9" value="3" aria-describedby="floorLabel">
+        <div class="site" id="site" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>What we build</h2>
+      <p class="lead">From a single extension to a full commercial fit-out, we handle the work from foundation to finishing.</p>
+      <ul class="svc">
+        <li><h3>New homes</h3><p>Custom houses and multi-unit residential builds, designed around your plot, budget and the way you live.</p></li>
+        <li><h3>Commercial buildings</h3><p>Offices, shops and warehouses built to code and delivered on an agreed schedule.</p></li>
+        <li><h3>Renovations and extensions</h3><p>Kitchens, extra floors, roof work and full interior rebuilds, with minimal disruption to your daily routine.</p></li>
+        <li><h3>Project management</h3><p>Already have plans? We coordinate contractors, materials and inspections on your behalf.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <h2>Recent projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button aria-pressed="true" data-f="all">All</button>
+        <button aria-pressed="false" data-f="home">Homes</button>
+        <button aria-pressed="false" data-f="commercial">Commercial</button>
+        <button aria-pressed="false" data-f="reno">Renovations</button>
+      </div>
+      <div class="grid" id="grid">
+        <article class="proj home"><div class="pic"></div><h3>Hillside family house</h3><p>Four-bedroom home with a timber frame and open-plan living area.</p></article>
+        <article class="proj commercial"><div class="pic"></div><h3>Riverside office block</h3><p>Three-storey office with shared lobby and ground-floor retail.</p></article>
+        <article class="proj reno"><div class="pic"></div><h3>Rooftop extension</h3><p>A new top floor added to an existing townhouse.</p></article>
+        <article class="proj home"><div class="pic"></div><h3>Garden duplex</h3><p>Two attached homes sharing a courtyard and parking.</p></article>
+      </div>
+      <p class="note">Sample projects. Replace the titles and pictures with your own work.</p>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <h2>How a project runs</h2>
+      <ol class="steps">
+        <li><h3>Site visit</h3><p>We walk the site, listen to your goals and agree on scope and budget.</p></li>
+        <li><h3>Design and permits</h3><p>Drawings, engineering and approvals, with each change confirmed in writing.</p></li>
+        <li><h3>Construction</h3><p>Your site lead sends regular progress updates and photos.</p></li>
+        <li><h3>Handover</h3><p>We inspect together, fix any snags and give you all documentation.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap cgrid">
+      <div>
+        <h2>Get a quote</h2>
+        <p class="lead">Tell us about your project. We reply within two working days.</p>
+        <ul class="details">
+          <li>Email: hello@davebuild.com</li>
+          <li>Phone: +000 000 000 0000</li>
+          <li>Mon to Fri, 8am to 5pm</li>
+        </ul>
+      </div>
+      <div>
+        <form id="quote" novalidate>
+          <div class="f"><label for="name">Full name</label><input id="name" name="name" autocomplete="name"><span class="err"></span></div>
+          <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"><span class="err"></span></div>
+          <div class="f"><label for="type">Project type</label>
+            <select id="type" name="type"><option value="">Choose one</option><option>New home</option><option>Commercial building</option><option>Renovation or extension</option><option>Project management</option></select><span class="err"></span></div>
+          <div class="f"><label for="msg">Project details</label><textarea id="msg" name="msg"></textarea><span class="err"></span></div>
+          <button class="btn" type="submit">Send request</button>
+        </form>
+        <div class="ok" id="ok" role="status" tabindex="-1"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>&copy; <span id="yr"></span> DavEbuild. All rights reserved.</span><span>Licensed and insured builders</span></div>
+</footer>
+
+<script>
+// Mobile menu
+const menu=document.getElementById('menu'),mb=document.getElementById('menuBtn');
+mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+
+// Hero: build floors
+const range=document.getElementById('floors'),site=document.getElementById('site'),lab=document.getElementById('floorLabel');
+function build(){
+  const n=+range.value;site.innerHTML='';
+  for(let i=1;i<=n;i++){
+    const f=document.createElement('div');f.className='floor'+(i===n?' top':'');
+    f.innerHTML='<i></i><i></i><i></i><i></i>';site.appendChild(f);
+  }
+  lab.textContent=n+(n===1?' floor':' floors');
+}
+range.addEventListener('input',build);build();
+
+// Project filter
+const btns=document.querySelectorAll('.filters button'),items=document.querySelectorAll('.proj');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  items.forEach(p=>{p.hidden=!(b.dataset.f==='all'||p.classList.contains(b.dataset.f))});
+}));
+
+// Quote form
+const form=document.getElementById('quote'),ok=document.getElementById('ok');
+const rules={
+  name:v=>v.trim().length<2?'Enter your full name.':'',
+  email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?'':'Enter a valid email address, like name@example.com.',
+  type:v=>v?'':'Choose a project type.',
+  msg:v=>v.trim().length<10?'Describe your project in at least 10 characters.':''
+};
+function check(el){
+  const msg=rules[el.name](el.value),box=el.closest('.f');
+  box.classList.toggle('bad',!!msg);box.querySelector('.err').textContent=msg;return !msg;
+}
+form.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('blur',()=>check(el)));
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const fields=[...form.querySelectorAll('input,select,textarea')];
+  const valid=fields.map(check).every(Boolean);
+  if(!valid){fields.find(f=>f.closest('.f').classList.contains('bad')).focus();return}
+  // Demo only: connect this to your email service or backend.
+  ok.textContent='Thanks, '+form.name.value.trim().split(' ')[0]+'. We received your request and will reply to '+form.email.value.trim()+' within two working days.';
+  ok.classList.add('show');form.style.display='none';ok.focus();
+});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
